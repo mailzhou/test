@@ -1,0 +1,2 @@
+test s3 set_contents_from_filename
+

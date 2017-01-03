@@ -1,0 +1,29 @@
+######################################################################
+# Example test for the RBD engine.
+# 
+# Runs a 4k random write test against a RBD via librbd
+#
+# NOTE: Make sure you have either a RBD named 'fio_test' or change
+#       the rbdname parameter.
+######################################################################
+[global]
+direct=1
+iodepth_batch_complete=1
+ioengine=rbd
+pool=rbd
+rbdname=volume-9c5a55de-e22d-4a28-a5b9-f72f83ccddc2
+rw=randwrite
+#bs=1M
+#runtime=100
+
+bs=4k
+runtime=600
+
+time_based
+iodepth_batch_complete=1
+norandommap=1
+randrepeat=0
+
+
+[iodepth256]
+iodepth=256
